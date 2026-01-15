@@ -1,0 +1,137 @@
+--create Table Students(
+-- ID int identity(1,1) primary key,
+-- FullName nvarchar(100) not null,
+-- Birthday date not null
+
+
+--)
+--INSERT INTO Students (FullName, Birthday) VALUES
+--('Ali Mammadov',      '2003-01-15'),
+--('Aysel Aliyeva',     '2006-02-20'),
+--('Nijat Hasanov',     '2002-03-10'),
+--('Leyla Karimova',    '2003-04-05'),
+--('Murad Ismayilov',   '2008-05-25'),
+--('Nigar Abdullayeva', '2002-06-14'),
+--('Rashad Quliyev',    '2009-07-30'),
+--('Sevda Agayeva',     '2004-08-18'),
+--('Elvin Ibrahimov',   '2006-09-09'),
+--('Gunel Rustamova',   '2003-10-22');
+
+
+--select * from students
+
+--select * from students where FullName like '%b%'
+
+--select * from students where year(birthday) < 2005
+
+--SELECT *
+--FROM Students
+--WHERE DATEADD(YEAR, 20, Birthday) < GETDATE();
+
+--alter table Students
+
+--add Email nvarchar(150)
+
+--UPDATE Students
+
+--SET Email = LOWER(REPLACE(FullName, ' ', '') + '@mail.com'
+
+--UPDATE Student
+
+--SET Email = 'Mammadov'
+
+--WHERE Id = 3;
+
+--update Students set Email = 'mammadov@gmail.com'
+
+--where ID = 3;
+
+--delete from students where ID = 7;
+
+--create table Course (
+--ID int  primary key,
+--Name nvarchar(100) not null
+
+--)
+--use Lab8
+--INSERT INTO Course (Name) VALUES
+--('Program'),
+--('Digital Marketing'),
+--('Data Analtika');
+
+--alter table Students
+
+--add   CourseId int
+
+--ALTER TABLE Students
+
+--ADD CONSTRAINT FK_Student_Course
+
+--FOREIGN KEY (CourseId)
+
+--REFERENCES Course(Id);
+
+--UPDATE Students SET CourseId = 1 WHERE Id IN (1,2,3); 
+
+--UPDATE Students SET CourseId = 2 WHERE Id IN (4,5,6); 
+
+--UPDATE Students SET CourseId = 3 WHERE Id IN (7,8,9,10); 
+
+--SELECT d.FullName AS StudentName,
+
+--       m.Name AS CourseName
+
+--FROM Students d
+
+--LEFT JOIN Course m
+
+--    ON d.CourseId = m.Id;
+
+
+--CREATE TABLE Shop
+--(
+--    Id INT IDENTITY(1,1) PRIMARY KEY,
+--    Name NVARCHAR(100) NOT NULL,
+--    Location NVARCHAR(100) NOT NULL
+--);
+
+
+--CREATE TABLE Category
+--(
+--    Id INT IDENTITY(1,1) PRIMARY KEY,
+--    Name NVARCHAR(100) NOT NULL
+--);
+
+
+--CREATE TABLE Product
+--(
+--    Id INT IDENTITY(1,1) PRIMARY KEY,
+--    Name NVARCHAR(100) NOT NULL,
+--    Count INT NOT NULL,
+--    ShopId INT,
+--    CategoryId INT,
+--    FOREIGN KEY (ShopId) REFERENCES Shop(Id),
+--    FOREIGN KEY (CategoryId) REFERENCES Category(Id)
+--);
+
+-- Shop-lar
+--INSERT INTO Shop (Name, Location) VALUES
+--('TamStore', 'Baku'),
+--('Bazar', 'Baku'),
+--('Oba', 'Agdam');
+
+
+--INSERT INTO Category (Name) VALUES
+--('İckiler'),
+--('Un Məmulatları'),
+--('Meyvə Tərəvəz');
+
+
+--INSERT INTO Product (Name, Count, ShopId, CategoryId) VALUES
+--('Cola', 15, 1, 1),       
+--('Bread', 8, 2, 2),         
+--('Apple', 20, 3, 3),        
+--('Azercay', 5, 1, 1),           
+--('Fanta', 12, 2, 2),         
+--('Coffee', 18, 3, 3);       
+--select * from  Shop
